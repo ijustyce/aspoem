@@ -5,7 +5,6 @@ import "~/styles/globals.css";
 import { TRPCReactProvider } from "~/trpc/react";
 
 import dynamic from "next/dynamic";
-import LoadFont from "./load-font";
 
 const MicrosoftClarity = dynamic(
   () => import("~/components/metrics/microsoft-clarity"),
@@ -35,10 +34,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             {children}
           </ThemeProvider>
         </TRPCReactProvider>
-
-        <GoogleAnalytics id={process.env.NEXT_PUBLIC_GA_ID} />
-        <MicrosoftClarity id={process.env.NEXT_PUBLIC_MC_ID} />
-        <LoadFont />
       </body>
     </html>
   );
